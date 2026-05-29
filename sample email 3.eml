@@ -1,0 +1,440 @@
+Delivered-To: shrileeshah24@gmail.com
+Received: by 2002:a05:6f02:6f5:b0:11b:2694:e25 with SMTP id f53csp2942154rce;
+        Mon, 25 May 2026 12:08:19 -0700 (PDT)
+X-Received: by 2002:a05:6a00:a86:b0:82f:99c5:868d with SMTP id d2e1a72fcca58-8415f5f36d9mr7553778b3a.4.1779736099325;
+        Mon, 25 May 2026 12:08:19 -0700 (PDT)
+Return-Path: <placement@acciojob-team.org>
+Received: from MA0PR01CU009.outbound.protection.outlook.com (mail-southindiaazlp170100001.outbound.protection.outlook.com. [2a01:111:f403:c409::1])
+        by mx.google.com with ESMTPS id d2e1a72fcca58-84165026f58si18282888b3a.167.2026.05.25.12.08.16
+        for <shrileeshah24@gmail.com>
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Mon, 25 May 2026 12:08:19 -0700 (PDT)
+Received-SPF: pass (google.com: domain of placement@acciojob-team.org designates 2a01:111:f403:c409::1 as permitted sender) client-ip=2a01:111:f403:c409::1;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@acciojob-team.org header.s=selector1-azurecomm-prod-net header.b=HktNVNCF;
+       arc=fail (signature failed);
+       spf=pass (google.com: domain of placement@acciojob-team.org designates 2a01:111:f403:c409::1 as permitted sender) smtp.mailfrom=placement@acciojob-team.org;
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=acciojob-team.org
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
+ b=On1Zo6jI24C9BS7JqoqrbJizxJHTAp+qutiRFZCmWHCW8wztMZ8Wbjk4v3EgK4nrhJba6M3ewf2ZZ5IdI87ReO/s/ISF+MSDMjFdqLHq7u3r1Bd0q118TgxFGioGH+2nLtUCbWS9IJaEFlVhaUjUoN1BBIKFLNevywo52jGcVbZF/vprZ7WcdUr2r2c/NarT6uWp5VVIw/nrBI86qOCasJH21o0ncIBUda3wTgxSR/pWI8SpHVjzXOP6A0UZJy1Vpm5a980b8ovDNZZg9zbTJFnGD75q9HkZcJbdF38IE5/WtCN7cDf6eejOJZR2XDnjRPuPik6UimJXuiP1AJKq6w==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
+ s=arcselector10001;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=x9lnZc02dbyOXclMc0ozUwQDeJ6oWQxB66VDrQm5bKs=;
+ b=f3k7IZz+jL9LJgUJshJOb6Md8ELxTBAsrDOH/atnhEO82RR88dkQCwyM9bx3jNs6xW6KnmxOz7A8ek9TeXlC/7eM4wQfTmirN2HQfvg4Q5QMsjsAGTnf4AT58h5EjQDzY8K3FDYEIie21zumxgyxlZjUKHuB6fC57wvrY1/M0kYHMn4JGhAGfR25LtTX+NpRx7SwxH8k3V1KN6oKgitR5bmIUhvXO81u4SdZCfBq9eCJtp+LbGY4WWlpHgPzlV35n7uQcTMlgUBOMWpSglYOGP46aCr6sl7rSUdsl8FW2yqrCIgBo4+2XQrUEfmg+N/r6pBL+Odx/td5CPbGf+Itog==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=none; dmarc=none;
+ dkim=none; arc=none
+Received: from substrate.office.com (2603:1096:c01:f6::14) by
+ PN3PR01MB9567.INDPRD01.PROD.OUTLOOK.COM with HTTP via
+ MA5P287CA0230.INDP287.PROD.OUTLOOK.COM; Mon, 25 May 2026 19:08:13 +0000
+DKIM-Signature: v=1; a=rsa-sha256; d=acciojob-team.org;
+	s=selector1-azurecomm-prod-net; c=relaxed/relaxed; t=1779736093;
+	h=from:to:cc:subject:date:messageid;
+	bh=x9lnZc02dbyOXclMc0ozUwQDeJ6oWQxB66VDrQm5bKs=;
+	b=HktNVNCFLHsTWq0NXMrfzKuOUnppS1mtfRVF/W6LlcdKz2ifsj4Kr1J2NOlHpFK7GTSZTcGuNCA
+	hK8JB7dh1C0oVHAto0yFQYsbyPKAB8OFtqWQaa34M3c+sEATDRTRTTrszXVxar1My64vKSAGC+0mi
+	xPHFhVDBX/zpM2TUNUfmvQyEkxJUVxWtA6S3g0f3GR90+7xhLfxZyHnGqEvYv5OrAm9I1q7p6qrB1
+	9DSGAolt6bdMKZFltl8K7kVSuPjon3x8EGsPpPEFp5D5FBGtTqn5d2Ll7UPmfZi4b5FWbk4GhkHLT
+	QwJTATQY2+mZKMfGoXZXDAzFDTKMOixq/jpQ==
+Date: Tue, 26 May 2026 00:38:08 +0530 (IST)
+Reply-To: contactus@acciojob.com
+Message-ID: <86614863.4457957.1779736088129@ip-10-11-51-140.eu-west-1.compute.internal>
+Subject: daily curated jobs for you
+MIME-Version: 1.0
+X-CleverTap_META: shrileeshah24@gmail.com|1748324224|1779713058|20260526|0|wzrk_default|-943051|-1|-1|
+X-CLEVERTAP_METADATA: {"X-CLEVERTAP_TARGET_ID": 1779713058, "X-CLEVERTAP_IID": {"$numberLong": "943051"}, "X-CLEVERTAP_IDN": {"$numberLong": "943051"}, "X-CLEVERTAP_PIVOT": "wzrk_default"}
+List-Unsubscribe: <https://eu1.clevertap-prod.com/unsubscribe?hosting_type=system&one_click=true&sub=0&p=LHg7IlYSCxQseHYlIjcwLkB8XloweGhrdWNmeAIFABYqdnJpPj48aQgQShZzNCcmNT8gB11eVhZtenByY2lifgMSTBh3eCIiITUmaQgQE0MtKDkUMz80KkdcRRZ7enAoAikLaQgQShZzNCcmNT8gB11eVhZtenB7dScv&e=Zm1mcwECBQZlbk16YG1rfAMDAQFvRWB7ZWxifgAGLkc%2FKDsnMj8hI1NYAwAXPT8qPjZ8KF1dLnwDFx4%3D&encoded=true&wzrk_ex=0>
+List-Unsubscribe-Post: List-Unsubscribe=One-Click
+To: shrileeshah24@gmail.com
+From: Team AccioJob <placement@acciojob-team.org>
+Sender: Team AccioJob <placement@acciojob-team.org>
+X-TsbHttpDeliveryResponseType: Success
+Content-Type: multipart/alternative; boundary="=-8xK7x+g5Cvl8BHFr1a5Cbw=="
+X-MS-PublicTrafficType: Email
+client-request-id: e2265fba-3db0-4f4a-9929-6395612d9a57
+request-id: e2265fba-3db0-4f4a-9929-6395612d9a57
+Return-Path: placement@acciojob-team.org
+X-MS-TrafficTypeDiagnostic: PN3PR01MB9567:EE_ACSPROD
+X-MS-Exchange-SenderADCheck: 0
+X-MS-Exchange-AntiSpam-Relay: 0
+X-Microsoft-Antispam:
+	BCL:0;ARA:13230040|7049299003|376014|69100299015|4022899009|7149299003|61400799027|3109299003|4076899003|13003099007|8096899003|56012099003|18002099003|21082099003|16102099003|19003699004;
+X-Microsoft-Antispam-Message-Info:
+	+3di9bBmw9waII6X2HIjOgvneu/IwjkBKoRPWMmSgogMmXJezKgzfdNRi8PRqy6QET3qTPnysdcTCPihgkCOv3CToA5NAx0OQKPl1MTUVbyG3aiAtQW+CZZtG6Y5jb3M+UIFTzhBmvAKh3cwk5AYWLEEi/9L50DYxBGJAWopNJSj+WZ7+WI9U7gNh3b6sxf5gs7DdrqqJYPXzVuPqZMqkNhPhTVcxjr9SpB5lhSpB4mz/XVg7xYkL841xtj4k3+7PIhV3bdABWEm1BJuM1S8t8WODeEHQC5do/hrzk0qOmuMOBzuNdhY/WDu8Y8QCD3uB9YCm9Ltx+m4wP9GzZ3BSVmZ9F1rNN9tFhL+mQfeAK5O+yRc/HeWsQcggdjSo7a2d6ZRxeHW8dey/Lgu3y+VyR3R1lm0uxdfVmPQfhymrCmYAm1uQoNCerPXIng61BJQZjI+c6HpD3O0GjeEkeK1Q1p4iiZYsiO8+UiwrFWXxP6Hlm30qwpbpQC45/Mnuyl/qEYwgeAG1BuyRjJOlQ15i8SeeAN80DrxIp/iC48hAEs1G3gRGFdKII0ynn5ocUV6lwm4IpzoZ0IqBHTUwmdfZk4EMeIqa7d403/1r/+tXL7HbDs1J+5ZEGebBFfeVrVnjB7i4vvTYvWv1826Q5LRYg==
+X-Forefront-Antispam-Report:
+	CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:;PTR:;CAT:NONE;SFS:(13230040)(7049299003)(376014)(69100299015)(4022899009)(7149299003)(61400799027)(3109299003)(4076899003)(13003099007)(8096899003)(56012099003)(18002099003)(21082099003)(16102099003)(19003699004);DIR:OUT;SFP:1021;
+X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
+X-MS-Exchange-AntiSpam-MessageData-0:
+	o9zehadzlMkkrRF/Ytb1lTRNPPFbLyMRNPklFXMNEkQ2z1gygjpRG74C3tNw11NvhMMAw3AsrsmqebDp/mm8cQI3K61jAmIUet8k4BFhOfwDZWA9t9uoGSW9Knw4+qwYsICj8C9xoHxI+DBtzS+mld7gE7g72xuN/4XZDSz7BZuxJ4O8na1yKfu0SWsi7zZTPETl07+Knk1F3vY4I7qPdY4ysfMfedw9zwQqRGlFpyzkEg88KdgWPoWCKjjN3uCjyQNmg0MpCe4X2P8m4XyIBevfILiV5HSy4zssIO4vEg0hymgejVkTmLdX+aF2BM2K7dsQvOcOu9vfPs9Abw+XGfoh5KyVnIRr1wTOPzlnDEiT5Por63FzB4Em+pXO94TsawGzaybiyPYj6beo2UxNN2uUUozYbRMDAY1/ckfEl2FQvOagcnl6tuWEggZ5WOYv4rAvwYtQkbaCc891Et/oiitBEP0dJQCuAFtGmWuB/dpB8s6BBbxjDPb3YsFjIcAdE7dCauARajQrKeWm+KESgTKKRB6RjM2q5BwVrK97wGux/AfhNLVgcG4zB3CWQipnfeU9cF97PK7PMCFuskcr8kKTNPSFUAp2WJx2H30k019CuGvmfUIR4/ph2hMWOaP2nsEK7asdq06j8/Jl2Cnsg1lD78rUlltFp79E+52eypVk8rZCPhiK4ozwGlTfRq9c5LFcA2sMLH5Hc7y5EmSwNg==
+X-OriginatorOrg: acsemailin2.onmicrosoft.com
+X-MS-Exchange-CrossTenant-AuthAs: Internal
+X-MS-Exchange-CrossTenant-AuthSource: HttpSubmission-PN3PR01MB9567
+X-MS-Exchange-CrossTenant-Id: 2eccc7fb-fd51-4320-913e-166293b4e70e
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 25 May 2026 19:08:13.2421 (UTC)
+X-MS-Exchange-CrossTenant-Network-Message-Id:
+	fe70122e-8e2a-47b0-41b3-08deba90f819
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: PN3PR01MB9567
+
+--=-8xK7x+g5Cvl8BHFr1a5Cbw==
+Content-Type: text/html; charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+<!DOCTYPE html> <!doctype html=3D""> <html lang=3D"en"> <head>  <title></ti=
+tle>  <style type=3D"text/css">body { margin:0; padding:0; width:100% !impo=
+rtant; -webkit-text-size-adjust:100%; background:#f3f3f1; }   table { borde=
+r-collapse:collapse; mso-table-lspace:0pt; mso-table-rspace:0pt; }   a { te=
+xt-decoration:none; }   img { border:0; outline:none; display:block; }    @=
+media only screen and (max-width: 620px) {     .container { width:100% !imp=
+ortant; }     .px { padding-left:18px !important; padding-right:18px !impor=
+tant; }     .card-pad { padding:16px 18px 16px 18px !important; }     .intr=
+o-lg { font-size:20px !important; line-height:1.35 !important; }     .intro=
+-sm { font-size:13.5px !important; }     .meta-cell { text-align:right !imp=
+ortant; padding-top:2px !important; white-space:nowrap !important; }     .a=
+pply-row td { display:block !important; width:100% !important; text-align:l=
+eft !important; }     .apply-cell { padding-top:12px !important; text-align=
+:left !important; }     .cta-col { display:block !important; width:100% !im=
+portant; padding:0 0 8px 0 !important; }     .cta-col:last-child { padding:=
+0 !important; }     .role-h { font-size:17px !important; }   }  </style> </=
+head> <body style=3D"margin:0;padding:0;background:#f3f3f1;font-family:-app=
+le-system,BlinkMacSystemFont,'Segoe UI',Inter,Helvetica,Arial,sans-serif;co=
+lor:#141414;"> <div style=3D"display:none;font-size:1px;color:#f3f3f1;line-=
+height:1px;max-height:0;max-width:0;opacity:0;overflow:hidden;">5 jobs hand=
+picked for you today =E2=80=94 Full Stack, Data Analyst, SDE and more.</div=
+>  <table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presenta=
+tion" style=3D"background:#f3f3f1;" width=3D"100%">  <tbody>   <tr>    <td =
+align=3D"center" style=3D"padding:24px 12px 32px 12px;">    <table border=
+=3D"0" cellpadding=3D"0" cellspacing=3D"0" class=3D"container" role=3D"pres=
+entation" style=3D"width:600px;max-width:600px;background:#ffffff;" width=
+=3D"600"><!-- =3D=3D=3D=3D=3D HEADER =3D=3D=3D=3D=3D -->     <tbody>      <=
+tr>       <td class=3D"px" style=3D"padding:22px 28px 18px 28px;">       <t=
+able border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentation"=
+ width=3D"100%">        <tbody>         <tr>          <td align=3D"left" st=
+yle=3D"line-height:1;" valign=3D"middle"><img alt=3D"AccioJob" height=3D"27=
+" src=3D"https://d2ufls9ug2ki79.cloudfront.net/uploaded/1779710425417-Accio=
+job%20Logo%201.png" style=3D"display:block;border:0;outline:none;height:27p=
+x;width:112px;" width=3D"112" /></td>          <td align=3D"right" style=3D=
+"font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Inter,Helvetica,Ar=
+ial,sans-serif;font-size:10.5px;font-weight:600;color:#8a8a86;letter-spacin=
+g:1.2px;text-transform:uppercase;line-height:1;" valign=3D"middle">Mon =C2=
+=B7 25 May</td>         </tr>        </tbody>       </table>       </td>   =
+   </tr>      <!-- thin rule -->      <tr>       <td class=3D"px" style=3D"=
+padding:0 28px;">       <div style=3D"height:1px;line-height:1px;font-size:=
+0;background:#ececea;"> </div>       </td>      </tr>      <!-- =3D=3D=3D=
+=3D=3D INTRO BLOCK =3D=3D=3D=3D=3D -->      <tr>       <td class=3D"px" sty=
+le=3D"padding:24px 28px 4px 28px;">       <p class=3D"intro-lg" style=3D"ma=
+rgin:0 0 10px 0;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Int=
+er,Helvetica,Arial,sans-serif;font-size:22px;line-height:1.32;font-weight:7=
+00;letter-spacing:-0.5px;color:#141414;">If you are seriously hunting a job=
+, build this one habit and apply to daily curated jobs every day.</p>      =
+  <p class=3D"intro-sm" style=3D"margin:0;font-family:-apple-system,BlinkMa=
+cSystemFont,'Segoe UI',Inter,Helvetica,Arial,sans-serif;font-size:14px;line=
+-height:1.6;font-weight:400;color:#6f6f6b;">Handpicked daily by our placeme=
+nt team =E2=80=94 sourced from LinkedIn, Naukri, Internshala and career pag=
+es of top companies.</p>       </td>      </tr>      <tr>       <td style=
+=3D"height:22px;line-height:22px;font-size:0;"> </td>      </tr>      <!-- =
+=3D=3D=3D=3D=3D JOB CARD =E2=80=94 Mple AI =C2=B7 #2a4fd9 =3D=3D=3D=3D=3D -=
+->      <tr>       <td class=3D"px" style=3D"padding:0 28px;">       <table=
+ border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentation" sty=
+le=3D"background:#ffffff;border:1px solid #e8e8e4;border-left:4px solid #2a=
+4fd9;" width=3D"100%">        <tbody>         <tr>          <td class=3D"ca=
+rd-pad" style=3D"padding:16px 20px 16px 20px;">          <table border=3D"0=
+" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentation" width=3D"100%">=
+           <tbody>            <tr>             <td style=3D"width:38px;" va=
+lign=3D"middle" width=3D"38">             <table border=3D"0" cellpadding=
+=3D"0" cellspacing=3D"0" role=3D"presentation">              <tbody>       =
+        <tr>                <td align=3D"center" height=3D"28" style=3D"wid=
+th:28px;height:28px;background:#2a4fd9;border-radius:6px;font-family:-apple=
+-system,BlinkMacSystemFont,'Segoe UI',Inter,Helvetica,Arial,sans-serif;font=
+-size:13px;font-weight:700;color:#ffffff;line-height:28px;" valign=3D"middl=
+e" width=3D"28">M</td>               </tr>              </tbody>           =
+  </table>             </td>             <td align=3D"left" style=3D"font-f=
+amily:-apple-system,BlinkMacSystemFont,'Segoe UI',Inter,Helvetica,Arial,san=
+s-serif;font-size:15px;font-weight:700;color:#141414;letter-spacing:-0.2px;=
+line-height:1.2;" valign=3D"middle">Mple AI</td>             <td align=3D"r=
+ight" class=3D"meta-cell" style=3D"font-family:-apple-system,BlinkMacSystem=
+Font,'Segoe UI',Inter,Helvetica,Arial,sans-serif;font-size:12px;color:#9a9a=
+96;line-height:1.2;" valign=3D"middle">Internshala</td>            </tr>   =
+        </tbody>          </table>           <div class=3D"role-h" style=3D=
+"font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Inter,Helvetica,Ar=
+ial,sans-serif;font-size:18px;font-weight:500;color:#141414;letter-spacing:=
+-0.3px;line-height:1.3;margin:4px 0 14px 0;">Software Development (Full Sta=
+ck)</div>           <table border=3D"0" cellpadding=3D"0" cellspacing=3D"0"=
+ class=3D"apply-row" role=3D"presentation" width=3D"100%">           <tbody=
+>            <tr>             <td align=3D"left" style=3D"font-family:-appl=
+e-system,BlinkMacSystemFont,'Segoe UI',Inter,Helvetica,Arial,sans-serif;" v=
+align=3D"middle"><span style=3D"display:inline-block;background:#efeeec;col=
+or:#4a4a46;font-size:11.5px;font-weight:500;padding:4px 9px;border-radius:3=
+px;margin:0 5px 4px 0;line-height:1.3;">React.js</span><span style=3D"displ=
+ay:inline-block;background:#efeeec;color:#4a4a46;font-size:11.5px;font-weig=
+ht:500;padding:4px 9px;border-radius:3px;margin:0 5px 4px 0;line-height:1.3=
+;">MongoDB</span><span style=3D"display:inline-block;background:#efeeec;col=
+or:#4a4a46;font-size:11.5px;font-weight:500;padding:4px 9px;border-radius:3=
+px;margin:0 5px 4px 0;line-height:1.3;">Node.js</span><span style=3D"displa=
+y:inline-block;background:#efeeec;color:#4a4a46;font-size:11.5px;font-weigh=
+t:500;padding:4px 9px;border-radius:3px;margin:0 5px 4px 0;line-height:1.3;=
+">Express.js</span></td>             <td align=3D"right" class=3D"apply-cel=
+l" valign=3D"middle">             <a href=3D"https://wizrocketmail.net/r?e=
+=3DK24AGR8EY396YmZ8DSZrfwEABAUpJCw8KSQscgYDAQFmJhILJD8hOFtfX2s0NT0gPj8SC04B=
+TVEhPzw%2FKxQ9P1tWWFc2LjskOXoRJ1tTWlEzJilpICAgIG1ZVRZteGN8YGNlegEABAwIaGJ5Y=
+WpneQQSHRYgICAgCCo7PV1EEw51LSg5PAU2LlRRRFgjeC8%3D&r=3Dhttps%3A%2F%2Fgo.acci=
+ojob.com%2FVVZHVH&c=3D679721376&token=3DGlVeAgNVAAEEAgg%3D&try=3D1&$follow_=
+redirect=3Dtrue" rel=3D"noopener" style=3D"display:inline-block;background:=
+#2a4fd9;color:#ffffff;font-family:-apple-system,BlinkMacSystemFont,'Segoe U=
+I',Inter,Helvetica,Arial,sans-serif;font-size:11.5px;font-weight:700;letter=
+-spacing:0.6px;padding:8px 16px;border-radius:4px;text-transform:uppercase;=
+line-height:1;" target=3D"_blank">Apply</a>             </td>            </=
+tr>           </tbody>          </table>          </td>         </tr>      =
+  </tbody>       </table>       </td>      </tr>      <tr>       <td style=
+=3D"height:10px;line-height:10px;font-size:0;"> </td>      </tr>      <!-- =
+=3D=3D=3D=3D=3D JOB CARD =E2=80=94 The Souled Store =C2=B7 #c0561c =3D=3D=
+=3D=3D=3D -->      <tr>       <td class=3D"px" style=3D"padding:0 28px;">  =
+     <table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presen=
+tation" style=3D"background:#ffffff;border:1px solid #e8e8e4;border-left:4p=
+x solid #c0561c;" width=3D"100%">        <tbody>         <tr>          <td =
+class=3D"card-pad" style=3D"padding:16px 20px 16px 20px;">          <table =
+border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentation" widt=
+h=3D"100%">           <tbody>            <tr>             <td style=3D"widt=
+h:38px;" valign=3D"middle" width=3D"38">             <table border=3D"0" ce=
+llpadding=3D"0" cellspacing=3D"0" role=3D"presentation">              <tbod=
+y>               <tr>                <td align=3D"center" height=3D"28" sty=
+le=3D"width:28px;height:28px;background:#c0561c;border-radius:6px;font-fami=
+ly:-apple-system,BlinkMacSystemFont,'Segoe UI',Inter,Helvetica,Arial,sans-s=
+erif;font-size:13px;font-weight:700;color:#ffffff;line-height:28px;" valign=
+=3D"middle" width=3D"28">T</td>               </tr>              </tbody>  =
+           </table>             </td>             <td align=3D"left" style=
+=3D"font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Inter,Helvetica=
+,Arial,sans-serif;font-size:15px;font-weight:700;color:#141414;letter-spaci=
+ng:-0.2px;line-height:1.2;" valign=3D"middle">The Souled Store</td>        =
+     <td align=3D"right" class=3D"meta-cell" style=3D"font-family:-apple-sy=
+stem,BlinkMacSystemFont,'Segoe UI',Inter,Helvetica,Arial,sans-serif;font-si=
+ze:12px;color:#9a9a96;line-height:1.2;" valign=3D"middle">LinkedIn</td>    =
+        </tr>           </tbody>          </table>           <div class=3D"=
+role-h" style=3D"font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',In=
+ter,Helvetica,Arial,sans-serif;font-size:18px;font-weight:500;color:#141414=
+;letter-spacing:-0.3px;line-height:1.3;margin:4px 0 14px 0;">Associate =E2=
+=80=94 Data Analyst</div>           <table border=3D"0" cellpadding=3D"0" c=
+ellspacing=3D"0" class=3D"apply-row" role=3D"presentation" width=3D"100%"> =
+          <tbody>            <tr>             <td align=3D"left" style=3D"f=
+ont-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Inter,Helvetica,Aria=
+l,sans-serif;" valign=3D"middle"><span style=3D"display:inline-block;backgr=
+ound:#efeeec;color:#4a4a46;font-size:11.5px;font-weight:500;padding:4px 9px=
+;border-radius:3px;margin:0 5px 4px 0;line-height:1.3;">SQL</span><span sty=
+le=3D"display:inline-block;background:#efeeec;color:#4a4a46;font-size:11.5p=
+x;font-weight:500;padding:4px 9px;border-radius:3px;margin:0 5px 4px 0;line=
+-height:1.3;">PowerBI</span></td>             <td align=3D"right" class=3D"=
+apply-cell" valign=3D"middle">             <a href=3D"https://wizrocketmail=
+.net/r?e=3DK24AGR8EY396YmZ8DSZrfwEABAUpJCw8KSQscgYDAQFmJhILJD8hOFtfX2s0NT0g=
+Pj8SC04BTVEhPzw%2FKxQ9P1tWWFc2LjskOXoRJ1tTWlEzJilpICAgIG1ZVRZteGN8YGNlegEAB=
+AwIaGJ5YWpneQQSHRYgICAgCCo7PV1EEw51LSg5PAU2LlRRRFgjeC8%3D&r=3Dhttps%3A%2F%2=
+Fgo.acciojob.com%2FVVZHVH&c=3D679721376&token=3DGlVeAgNVAAEEAgg%3D&try=3D1&=
+$follow_redirect=3Dtrue" rel=3D"noopener" style=3D"display:inline-block;bac=
+kground:#c0561c;color:#ffffff;font-family:-apple-system,BlinkMacSystemFont,=
+'Segoe UI',Inter,Helvetica,Arial,sans-serif;font-size:11.5px;font-weight:70=
+0;letter-spacing:0.6px;padding:8px 16px;border-radius:4px;text-transform:up=
+percase;line-height:1;" target=3D"_blank">Apply</a>             </td>      =
+      </tr>           </tbody>          </table>          </td>         </t=
+r>        </tbody>       </table>       </td>      </tr>      <tr>       <t=
+d style=3D"height:10px;line-height:10px;font-size:0;"> </td>      </tr>    =
+  <!-- =3D=3D=3D=3D=3D JOB CARD =E2=80=94 S&P Global =C2=B7 #2a4fd9 =3D=3D=
+=3D=3D=3D -->      <tr>       <td class=3D"px" style=3D"padding:0 28px;">  =
+     <table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presen=
+tation" style=3D"background:#ffffff;border:1px solid #e8e8e4;border-left:4p=
+x solid #2a4fd9;" width=3D"100%">        <tbody>         <tr>          <td =
+class=3D"card-pad" style=3D"padding:16px 20px 16px 20px;">          <table =
+border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentation" widt=
+h=3D"100%">           <tbody>            <tr>             <td style=3D"widt=
+h:38px;" valign=3D"middle" width=3D"38">             <table border=3D"0" ce=
+llpadding=3D"0" cellspacing=3D"0" role=3D"presentation">              <tbod=
+y>               <tr>                <td align=3D"center" height=3D"28" sty=
+le=3D"width:28px;height:28px;background:#2a4fd9;border-radius:6px;font-fami=
+ly:-apple-system,BlinkMacSystemFont,'Segoe UI',Inter,Helvetica,Arial,sans-s=
+erif;font-size:13px;font-weight:700;color:#ffffff;line-height:28px;" valign=
+=3D"middle" width=3D"28">S</td>               </tr>              </tbody>  =
+           </table>             </td>             <td align=3D"left" style=
+=3D"font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Inter,Helvetica=
+,Arial,sans-serif;font-size:15px;font-weight:700;color:#141414;letter-spaci=
+ng:-0.2px;line-height:1.2;" valign=3D"middle">S&P Global</td>             <=
+td align=3D"right" class=3D"meta-cell" style=3D"font-family:-apple-system,B=
+linkMacSystemFont,'Segoe UI',Inter,Helvetica,Arial,sans-serif;font-size:12p=
+x;color:#9a9a96;line-height:1.2;" valign=3D"middle">LinkedIn</td>          =
+  </tr>           </tbody>          </table>           <div class=3D"role-h=
+" style=3D"font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Inter,He=
+lvetica,Arial,sans-serif;font-size:18px;font-weight:500;color:#141414;lette=
+r-spacing:-0.3px;line-height:1.3;margin:4px 0 14px 0;">Apprentice =E2=80=94=
+ Data Analyst</div>           <table border=3D"0" cellpadding=3D"0" cellspa=
+cing=3D"0" class=3D"apply-row" role=3D"presentation" width=3D"100%">       =
+    <tbody>            <tr>             <td align=3D"left" style=3D"font-fa=
+mily:-apple-system,BlinkMacSystemFont,'Segoe UI',Inter,Helvetica,Arial,sans=
+-serif;" valign=3D"middle"><span style=3D"display:inline-block;background:#=
+efeeec;color:#4a4a46;font-size:11.5px;font-weight:500;padding:4px 9px;borde=
+r-radius:3px;margin:0 5px 4px 0;line-height:1.3;">MSExcel</span></td>      =
+       <td align=3D"right" class=3D"apply-cell" valign=3D"middle">         =
+    <a href=3D"https://wizrocketmail.net/r?e=3DK24AGR8EY396YmZ8DSZrfwEABAUp=
+JCw8KSQscgYDAQFmJhILJD8hOFtfX2s0NT0gPj8SC04BTVEhPzw%2FKxQ9P1tWWFc2LjskOXoRJ=
+1tTWlEzJilpICAgIG1ZVRZteGN8YGNlegEABAwIaGJ5YWpneQQSHRYgICAgCCo7PV1EEw51LSg5=
+PAU2LlRRRFgjeC8%3D&r=3Dhttps%3A%2F%2Fgo.acciojob.com%2FVVZHVH&c=3D679721376=
+&token=3DGlVeAgNVAAEEAgg%3D&try=3D1&$follow_redirect=3Dtrue" rel=3D"noopene=
+r" style=3D"display:inline-block;background:#2a4fd9;color:#ffffff;font-fami=
+ly:-apple-system,BlinkMacSystemFont,'Segoe UI',Inter,Helvetica,Arial,sans-s=
+erif;font-size:11.5px;font-weight:700;letter-spacing:0.6px;padding:8px 16px=
+;border-radius:4px;text-transform:uppercase;line-height:1;" target=3D"_blan=
+k">Apply</a>             </td>            </tr>           </tbody>         =
+ </table>          </td>         </tr>        </tbody>       </table>      =
+ </td>      </tr>      <tr>       <td style=3D"height:10px;line-height:10px=
+;font-size:0;"> </td>      </tr>      <!-- =3D=3D=3D=3D=3D JOB CARD =E2=80=
+=94 Pawzz Foundation =C2=B7 #1f6b43 =3D=3D=3D=3D=3D -->      <tr>       <td=
+ class=3D"px" style=3D"padding:0 28px;">       <table border=3D"0" cellpadd=
+ing=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"background:#ffff=
+ff;border:1px solid #e8e8e4;border-left:4px solid #1f6b43;" width=3D"100%">=
+        <tbody>         <tr>          <td class=3D"card-pad" style=3D"paddi=
+ng:16px 20px 16px 20px;">          <table border=3D"0" cellpadding=3D"0" ce=
+llspacing=3D"0" role=3D"presentation" width=3D"100%">           <tbody>    =
+        <tr>             <td style=3D"width:38px;" valign=3D"middle" width=
+=3D"38">             <table border=3D"0" cellpadding=3D"0" cellspacing=3D"0=
+" role=3D"presentation">              <tbody>               <tr>           =
+     <td align=3D"center" height=3D"28" style=3D"width:28px;height:28px;bac=
+kground:#1f6b43;border-radius:6px;font-family:-apple-system,BlinkMacSystemF=
+ont,'Segoe UI',Inter,Helvetica,Arial,sans-serif;font-size:13px;font-weight:=
+700;color:#ffffff;line-height:28px;" valign=3D"middle" width=3D"28">P</td> =
+              </tr>              </tbody>             </table>             =
+</td>             <td align=3D"left" style=3D"font-family:-apple-system,Bli=
+nkMacSystemFont,'Segoe UI',Inter,Helvetica,Arial,sans-serif;font-size:15px;=
+font-weight:700;color:#141414;letter-spacing:-0.2px;line-height:1.2;" valig=
+n=3D"middle">Pawzz Foundation</td>             <td align=3D"right" class=3D=
+"meta-cell" style=3D"font-family:-apple-system,BlinkMacSystemFont,'Segoe UI=
+',Inter,Helvetica,Arial,sans-serif;font-size:12px;color:#9a9a96;line-height=
+:1.2;" valign=3D"middle">Internshala</td>            </tr>           </tbod=
+y>          </table>           <div class=3D"role-h" style=3D"font-family:-=
+apple-system,BlinkMacSystemFont,'Segoe UI',Inter,Helvetica,Arial,sans-serif=
+;font-size:18px;font-weight:500;color:#141414;letter-spacing:-0.3px;line-he=
+ight:1.3;margin:4px 0 14px 0;">Vibe Coder Intern</div>           <table bor=
+der=3D"0" cellpadding=3D"0" cellspacing=3D"0" class=3D"apply-row" role=3D"p=
+resentation" width=3D"100%">           <tbody>            <tr>             =
+<td align=3D"left" style=3D"font-family:-apple-system,BlinkMacSystemFont,'S=
+egoe UI',Inter,Helvetica,Arial,sans-serif;" valign=3D"middle"><span style=
+=3D"display:inline-block;background:#efeeec;color:#4a4a46;font-size:11.5px;=
+font-weight:500;padding:4px 9px;border-radius:3px;margin:0 5px 4px 0;line-h=
+eight:1.3;">JavaScript</span><span style=3D"display:inline-block;background=
+:#efeeec;color:#4a4a46;font-size:11.5px;font-weight:500;padding:4px 9px;bor=
+der-radius:3px;margin:0 5px 4px 0;line-height:1.3;">Node.js</span><span sty=
+le=3D"display:inline-block;background:#efeeec;color:#4a4a46;font-size:11.5p=
+x;font-weight:500;padding:4px 9px;border-radius:3px;margin:0 5px 4px 0;line=
+-height:1.3;">SQL</span></td>             <td align=3D"right" class=3D"appl=
+y-cell" valign=3D"middle">             <a href=3D"https://wizrocketmail.net=
+/r?e=3DK24AGR8EY396YmZ8DSZrfwEABAUpJCw8KSQscgYDAQFmJhILJD8hOFtfX2s0NT0gPj8S=
+C04BTVEhPzw%2FKxQ9P1tWWFc2LjskOXoRJ1tTWlEzJilpICAgIG1ZVRZteGN8YGNlegEABAwIa=
+GJ5YWpneQQSHRYgICAgCCo7PV1EEw51LSg5PAU2LlRRRFgjeC8%3D&r=3Dhttps%3A%2F%2Fgo.=
+acciojob.com%2FVVZHVH&c=3D679721376&token=3DGlVeAgNVAAEEAgg%3D&try=3D1&$fol=
+low_redirect=3Dtrue" rel=3D"noopener" style=3D"display:inline-block;backgro=
+und:#1f6b43;color:#ffffff;font-family:-apple-system,BlinkMacSystemFont,'Seg=
+oe UI',Inter,Helvetica,Arial,sans-serif;font-size:11.5px;font-weight:700;le=
+tter-spacing:0.6px;padding:8px 16px;border-radius:4px;text-transform:upperc=
+ase;line-height:1;" target=3D"_blank">Apply</a>             </td>          =
+  </tr>           </tbody>          </table>          </td>         </tr>  =
+      </tbody>       </table>       </td>      </tr>      <tr>       <td st=
+yle=3D"height:10px;line-height:10px;font-size:0;"> </td>      </tr>      <!=
+-- =3D=3D=3D=3D=3D JOB CARD =E2=80=94 91social =C2=B7 #c0561c =3D=3D=3D=3D=
+=3D -->      <tr>       <td class=3D"px" style=3D"padding:0 28px;">       <=
+table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentation=
+" style=3D"background:#ffffff;border:1px solid #e8e8e4;border-left:4px soli=
+d #c0561c;" width=3D"100%">        <tbody>         <tr>          <td class=
+=3D"card-pad" style=3D"padding:16px 20px 16px 20px;">          <table borde=
+r=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentation" width=3D"=
+100%">           <tbody>            <tr>             <td style=3D"width:38p=
+x;" valign=3D"middle" width=3D"38">             <table border=3D"0" cellpad=
+ding=3D"0" cellspacing=3D"0" role=3D"presentation">              <tbody>   =
+            <tr>                <td align=3D"center" height=3D"28" style=3D=
+"width:28px;height:28px;background:#c0561c;border-radius:6px;font-family:-a=
+pple-system,BlinkMacSystemFont,'Segoe UI',Inter,Helvetica,Arial,sans-serif;=
+font-size:13px;font-weight:700;color:#ffffff;line-height:28px;" valign=3D"m=
+iddle" width=3D"28">9</td>               </tr>              </tbody>       =
+      </table>             </td>             <td align=3D"left" style=3D"fo=
+nt-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Inter,Helvetica,Arial=
+,sans-serif;font-size:15px;font-weight:700;color:#141414;letter-spacing:-0.=
+2px;line-height:1.2;" valign=3D"middle">91social</td>             <td align=
+=3D"right" class=3D"meta-cell" style=3D"font-family:-apple-system,BlinkMacS=
+ystemFont,'Segoe UI',Inter,Helvetica,Arial,sans-serif;font-size:12px;color:=
+#9a9a96;line-height:1.2;" valign=3D"middle">Internshala</td>            </t=
+r>           </tbody>          </table>           <div class=3D"role-h" sty=
+le=3D"font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Inter,Helveti=
+ca,Arial,sans-serif;font-size:18px;font-weight:500;color:#141414;letter-spa=
+cing:-0.3px;line-height:1.3;margin:4px 0 14px 0;">SDE Internship</div>     =
+      <table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" class=3D"appl=
+y-row" role=3D"presentation" width=3D"100%">           <tbody>            <=
+tr>             <td align=3D"left" style=3D"font-family:-apple-system,Blink=
+MacSystemFont,'Segoe UI',Inter,Helvetica,Arial,sans-serif;" valign=3D"middl=
+e"><span style=3D"display:inline-block;background:#efeeec;color:#4a4a46;fon=
+t-size:11.5px;font-weight:500;padding:4px 9px;border-radius:3px;margin:0 5p=
+x 4px 0;line-height:1.3;">HTML</span><span style=3D"display:inline-block;ba=
+ckground:#efeeec;color:#4a4a46;font-size:11.5px;font-weight:500;padding:4px=
+ 9px;border-radius:3px;margin:0 5px 4px 0;line-height:1.3;">CSS</span><span=
+ style=3D"display:inline-block;background:#efeeec;color:#4a4a46;font-size:1=
+1.5px;font-weight:500;padding:4px 9px;border-radius:3px;margin:0 5px 4px 0;=
+line-height:1.3;">JavaScript</span></td>             <td align=3D"right" cl=
+ass=3D"apply-cell" valign=3D"middle">             <a href=3D"https://wizroc=
+ketmail.net/r?e=3DK24AGR8EY396YmZ8DSZrfwEABAUpJCw8KSQscgYDAQFmJhILJD8hOFtfX=
+2s0NT0gPj8SC04BTVEhPzw%2FKxQ9P1tWWFc2LjskOXoRJ1tTWlEzJilpICAgIG1ZVRZteGN8YG=
+NlegEABAwIaGJ5YWpneQQSHRYgICAgCCo7PV1EEw51LSg5PAU2LlRRRFgjeC8%3D&r=3Dhttps%=
+3A%2F%2Fgo.acciojob.com%2FVVZHVH&c=3D679721376&token=3DGlVeAgNVAAEEAgg%3D&t=
+ry=3D1&$follow_redirect=3Dtrue" rel=3D"noopener" style=3D"display:inline-bl=
+ock;background:#c0561c;color:#ffffff;font-family:-apple-system,BlinkMacSyst=
+emFont,'Segoe UI',Inter,Helvetica,Arial,sans-serif;font-size:11.5px;font-we=
+ight:700;letter-spacing:0.6px;padding:8px 16px;border-radius:4px;text-trans=
+form:uppercase;line-height:1;" target=3D"_blank">Apply</a>             </td=
+>            </tr>           </tbody>          </table>          </td>     =
+    </tr>        </tbody>       </table>       </td>      </tr>      <tr>  =
+     <td style=3D"height:10px;line-height:10px;font-size:0;"> </td>      </=
+tr>      <tr>       <td style=3D"height:12px;line-height:12px;font-size:0;"=
+> </td>      </tr>      <tr>       <td style=3D"height:22px;line-height:22p=
+x;font-size:0;"> </td>      </tr>      <!-- =3D=3D=3D=3D=3D FOOTER CTAs =3D=
+=3D=3D=3D=3D -->      <tr>       <td class=3D"px" style=3D"padding:0 28px;"=
+>       <table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"pre=
+sentation" width=3D"100%">        <tbody>         <tr>          <td class=
+=3D"cta-col" style=3D"padding-right:5px;" valign=3D"middle" width=3D"50%"> =
+         <table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"pr=
+esentation" width=3D"100%">           <tbody>            <tr>             <=
+td align=3D"center" style=3D"background:#ffffff;border:1.5px solid #141414;=
+border-radius:6px;">             <a href=3D"https://wizrocketmail.net/r?e=
+=3DK24AGR8EY396YmZ8DSZrfwEABAUpJCw8KSQscgYDAQFmJhILJD8hOFtfX2s0NT0gPj8SC04B=
+TVEhPzw%2FKxQ9P1tWWFc2LjskOXoRJ1tTWlEzJilpICAgIG1ZVRZteGN8YGNlegEABAwIaGJ5Y=
+WpneQQSHRYgICAgCCo7PV1EEw51LSg5PAU2LlRRRFgjeC8%3D&r=3Dhttps%3A%2F%2Fgo.acci=
+ojob.com%2FgCQSsN&c=3D679721376&token=3DGlVVBwJVDAYFCgc%3D&try=3D1&$follow_=
+redirect=3Dtrue" rel=3D"noopener" style=3D"display:block;font-family:-apple=
+-system,BlinkMacSystemFont,'Segoe UI',Inter,Helvetica,Arial,sans-serif;font=
+-size:13.5px;font-weight:600;color:#141414;letter-spacing:-0.1px;padding:12=
+px 14px;line-height:1.2;" target=3D"_blank">Check recent placements =E2=86=
+=92</a>             </td>            </tr>           </tbody>          </ta=
+ble>          </td>          <td class=3D"cta-col" style=3D"padding-left:5p=
+x;" valign=3D"middle" width=3D"50%">          <table border=3D"0" cellpaddi=
+ng=3D"0" cellspacing=3D"0" role=3D"presentation" width=3D"100%">           =
+<tbody>            <tr>             <td align=3D"center" style=3D"backgroun=
+d:#141414;border:1.5px solid #141414;border-radius:6px;">             <a hr=
+ef=3D"https://wizrocketmail.net/r?e=3DK24AGR8EY396YmZ8DSZrfwEABAUpJCw8KSQsc=
+gYDAQFmJhILJD8hOFtfX2s0NT0gPj8SC04BTVEhPzw%2FKxQ9P1tWWFc2LjskOXoRJ1tTWlEzJi=
+lpICAgIG1ZVRZteGN8YGNlegEABAwIaGJ5YWpneQQSHRYgICAgCCo7PV1EEw51LSg5PAU2LlRRR=
+FgjeC8%3D&r=3Dhttps%3A%2F%2Fgo.acciojob.com%2FVVZHVH&c=3D679721376&token=3D=
+GlVeAgNVAAEEAgg%3D&try=3D1&$follow_redirect=3Dtrue" rel=3D"noopener" style=
+=3D"display:block;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',I=
+nter,Helvetica,Arial,sans-serif;font-size:13.5px;font-weight:600;color:#fff=
+fff;letter-spacing:-0.1px;padding:12px 14px;line-height:1.2;" target=3D"_bl=
+ank">See all jobs =E2=86=92</a>             </td>            </tr>         =
+  </tbody>          </table>          </td>         </tr>        </tbody>  =
+     </table>       </td>      </tr>      <tr>       <td style=3D"height:28=
+px;line-height:28px;font-size:0;"> </td>      </tr>      <!-- =3D=3D=3D=3D=
+=3D STANDARD FOOTER =3D=3D=3D=3D=3D -->      <tr>       <td class=3D"px" st=
+yle=3D"padding:16px 28px 22px 28px;border-top:1px solid #ececea;">       <t=
+able border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentation"=
+ width=3D"100%">        <tbody>         <tr>          <td align=3D"left" st=
+yle=3D"font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Inter,Helvet=
+ica,Arial,sans-serif;font-size:11px;color:#a0a09c;line-height:1.5;">Daily j=
+obs from AccioJob</td>          <td align=3D"right" style=3D"font-family:-a=
+pple-system,BlinkMacSystemFont,'Segoe UI',Inter,Helvetica,Arial,sans-serif;=
+font-size:11px;color:#a0a09c;">          <a href=3D"#" style=3D"color:#8a8a=
+86;">Unsubscribe</a>          </td>         </tr>        </tbody>       </t=
+able>       </td>      </tr>     </tbody>    </table>    </td>   </tr>  </t=
+body> </table> </body> </html> </!doctype><img  alt=3D"" border=3D"0" heigh=
+t=3D"1" width=3D"1" src=3D"https://wizrocketmail.net/r?e=3DK24AGR8EY396YmZ8=
+DSZrfwEABAUpJCw8KSQscgYDAQFmJhILJD8hOFtfX2s0NT0gPj8SC04BTVEhPzw%2FKxQ9P1tWW=
+Fc2LjskOXoEIldHVFArIXA8LSg5FFtUEw51a2V8bm1jeAIFCWtlamB9Z29gfRAcE0MtKDkUJzMk=
+JEYSCxYgICAgCD43LVNFXUB1Jw%3D%3D&c=3D706024256"></img>
+--=-8xK7x+g5Cvl8BHFr1a5Cbw==--
